@@ -1,0 +1,209 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100vh;
+}
+
+body {
+  background-color: #1e1d1f;
+  font-family: sans-serif;
+  padding: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+div.welcome {
+  background-color: rgb(37, 37, 37);
+  width: 280px;
+  height: 175px;
+  border: 1px solid darkslateblue;
+  border-radius: 5px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  text-align: center;
+}
+
+section {
+  background-color: rgb(22, 22, 22);
+  width: 280px;
+  height: 290px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid darkslateblue;
+  border-radius: 5px;
+}
+
+h1 {
+  font-family: sans-serif;
+  font-size: 33pt;
+  color: #fff;
+  margin-top: 62px;
+  font-weight: 300;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+form .input-block {
+  margin-bottom: 20px;
+}
+
+form .input-block input {
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  padding: 7px;
+  font-size: 16px;
+  color: #7159c1;
+  border: 1px solid darkslateblue;
+  border-radius: 3px;
+  outline-color: #7159c1;
+  margin-bottom: -8px;
+  outline: none;
+}
+
+form .btn-login {
+  font-family: sans-serif;
+  font-size: 13px;
+  display: block;
+  width: 100%;
+  background-color: rgb(37, 37, 37);
+  color: rgb(255, 255, 255);
+  border-width: 0px;
+  border-radius: 1px;
+  margin: 0px;
+  padding: 7px;
+  box-shadow: 0px 2px 0px darkslateblue;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Form animations*/
+
+section {
+  animation: fade 0.2s;
+}
+
+form .input-block {
+  animation: move 500ms;
+}
+
+form .btn-login {
+  animation: move 400ms;
+  animation-delay: 250ms;
+  animation-fill-mode: backwards;
+}
+
+@keyframes move {
+  from {
+    opacity: 0;
+    transform: translateX(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.form-hide {
+  animation: down 500ms forwards;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+@keyframes down {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5vh);
+  }
+
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+/* form error*/
+
+.validate-error {
+  animation: error 200ms linear, fade paused;
+  animation-iteration-count: 2;
+}
+
+@keyframes error {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  35% {
+    transform: translateX(-10%);
+  }
+
+  75% {
+    transform: translateX((10%));
+  }
+}
+
+/* squares*/
+body {
+    overflow: hidden;
+}
+
+.squares li {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(34,33,36, 0.219);
+    display: block;
+    position: absolute;
+    bottom: -60px;
+    animation: up infinite;
+    animation-direction: alternate;
+    border: 1px solid #b19aff;
+    border-radius: 3px;
+}
+
+@keyframes up{
+    0%{
+        opacity: 0;
+        transform: translateY(100px);
+        filter: blur(10px);
+    }
+
+    50%{
+        opacity: 1;
+        filter: blur(0px);
+    }
+
+    100%{
+        opacity: 0;
+        transform: translateY(-730px) rotate(960deg);
+        filter: blur(10px);
+    }
+}
